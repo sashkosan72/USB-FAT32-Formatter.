@@ -37,8 +37,8 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.9'
-      - name: Fix Android Button compatibility
-        run: sed -i 's/b.setTextAllCaps(false);//' app/src/main/java/ua/fat32formatter/MainActivity.java
+      - name: Upgrade FAT32 Майстер 0.2
+        run: python3 scripts/upgrade_to_02.py
       - name: Compile APK
         run: gradle :app:assembleDebug --no-daemon --stacktrace
       - name: Upload APK
